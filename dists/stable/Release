@@ -2,7 +2,7 @@ Origin: Mr-EgyptianX
 Label: Termux AI
 Suite: stable
 Codename: stable
-Architectures: all
+Architectures: arm all
 Components: main
 Description: Termux AI APT Repository
 
