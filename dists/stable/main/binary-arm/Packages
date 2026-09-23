@@ -1,0 +1,9 @@
+Package: termux-ai
+Version: 1.0.0
+Architecture: all
+Maintainer: Mustafa
+Description: Termux AI - AI assistant for Termux
+Filename: pool/main/t/termux-ai/termux-ai_1.0.0_all.deb
+Size: 23292
+SHA256: 38c70b4a2a8ae2187d7bf4bea3b58b1748b66b098b67bef3b014d554efe651dc
+

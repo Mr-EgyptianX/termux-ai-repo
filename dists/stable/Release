@@ -5,3 +5,9 @@ Codename: stable
 Architectures: all
 Components: main
 Description: Termux AI APT Repository
+
+SHA256:
+ 7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421              263 main/binary-arm/Packages
+ ace17b3a0f0b1c964d84c89dfba151cb30aeafe87a1a943b4174a79e82210325              230 main/binary-arm/Packages.gz
+ 7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421              263 main/binary-all/Packages
+ ace17b3a0f0b1c964d84c89dfba151cb30aeafe87a1a943b4174a79e82210325              230 main/binary-all/Packages.gz
