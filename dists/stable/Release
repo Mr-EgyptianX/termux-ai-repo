@@ -1,0 +1,7 @@
+Origin: Mr-EgyptianX
+Label: Termux AI
+Suite: stable
+Codename: stable
+Architectures: all
+Components: main
+Description: Termux AI APT Repository
