@@ -111,7 +111,6 @@ date = datetime.now(timezone.utc).strftime(
     "%a, %d %b %Y %H:%M:%S UTC"
 )
 
-
 release_lines = [
     "Origin: Mr-EgyptianX",
     "Label: Termux AI",
@@ -122,23 +121,69 @@ release_lines = [
     "Components: main",
     "Description: Termux AI APT Repository",
     "",
-    "SHA256:",
+    "MD5Sum:",
 ]
 
+for relative in release_files:
+    path = DIST / relative
+    data = path.read_bytes()
+    md5 = hashlib.md5(data).hexdigest()
+    size = len(data)
+
+    release_lines.append(
+        f" {md5} {size:18d} {relative}"
+    )
+
+
+release_lines.extend([
+    "",
+    "SHA1:",
+])
 
 for relative in release_files:
-
     path = DIST / relative
-
     data = path.read_bytes()
+    sha1 = hashlib.sha1(data).hexdigest()
+    size = len(data)
 
+    release_lines.append(
+        f" {sha1} {size:18d} {relative}"
+    )
+
+
+release_lines.extend([
+    "",
+    "SHA256:",
+])
+
+for relative in release_files:
+    path = DIST / relative
+    data = path.read_bytes()
     sha256 = hashlib.sha256(data).hexdigest()
-
     size = len(data)
 
     release_lines.append(
         f" {sha256} {size:18d} {relative}"
     )
+
+
+release_lines.extend([
+    "",
+    "SHA512:",
+])
+
+for relative in release_files:
+    path = DIST / relative
+    data = path.read_bytes()
+    sha512 = hashlib.sha512(data).hexdigest()
+    size = len(data)
+
+    release_lines.append(
+        f" {sha512} {size:18d} {relative}"
+    )
+
+
+release_lines.append("")
 
 
 # --------------------------------------

@@ -5,27 +5,46 @@ Origin: Mr-EgyptianX
 Label: Termux AI
 Suite: stable
 Codename: stable
-Date: Thu, 24 Sep 2026 12:47:56 UTC
+Date: Thu, 24 Sep 2026 12:51:59 UTC
 Architectures: arm all
 Components: main
 Description: Termux AI APT Repository
 
+MD5Sum:
+ 4de29969413f0182ac5edfebf75e4828                263 main/binary-arm/Packages
+ 267be08443563d72515ba4c250911ce0                230 main/binary-arm/Packages.gz
+ 4de29969413f0182ac5edfebf75e4828                263 main/binary-all/Packages
+ 267be08443563d72515ba4c250911ce0                230 main/binary-all/Packages.gz
+
+SHA1:
+ 8e4490da27dbcf17b58df4e492775de65e9f61e8                263 main/binary-arm/Packages
+ 4dedbdfaa5bbeedb57e98eaf75a3382c5e22ac68                230 main/binary-arm/Packages.gz
+ 8e4490da27dbcf17b58df4e492775de65e9f61e8                263 main/binary-all/Packages
+ 4dedbdfaa5bbeedb57e98eaf75a3382c5e22ac68                230 main/binary-all/Packages.gz
+
 SHA256:
  7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421                263 main/binary-arm/Packages
- 5face44cfe7dcb5e24d128b67807991b3bcb0f0c7743746d62a22555c0926ca4                230 main/binary-arm/Packages.gz
+ 60be94a4b607199c5424cd7c1175dc321f66cda6ae1e842b8f07a5ddc24d32d5                230 main/binary-arm/Packages.gz
  7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421                263 main/binary-all/Packages
- 5face44cfe7dcb5e24d128b67807991b3bcb0f0c7743746d62a22555c0926ca4                230 main/binary-all/Packages.gz
+ 60be94a4b607199c5424cd7c1175dc321f66cda6ae1e842b8f07a5ddc24d32d5                230 main/binary-all/Packages.gz
 
 SHA512:
  0a872ba27f8d53650e70e83320e808b68cbab5ca177b03bc27ed932385f81e4ae488546e7c961b4e2ae5e5ff82ef4299d91902de9e197abeac8590e6dac27783                263 main/binary-arm/Packages
- 41c8345926d666ab5602005963a0449d84ef6177ce0b4d5a3bd8708d863cffed119cb32b90f33b7ffd809cb2fb97d801d3503d62da3d619937436bfef76264d2                230 main/binary-arm/Packages.gz
+ 2d14e691fb4f569fdf8f21d5ec00fd4da1e7954228cef9e0e2fe24aa9f0980d1fc650b3da63f6fec3daa1d484eefc65fef3a8343947b4e16c848a88d41bcf511                230 main/binary-arm/Packages.gz
  0a872ba27f8d53650e70e83320e808b68cbab5ca177b03bc27ed932385f81e4ae488546e7c961b4e2ae5e5ff82ef4299d91902de9e197abeac8590e6dac27783                263 main/binary-all/Packages
- 41c8345926d666ab5602005963a0449d84ef6177ce0b4d5a3bd8708d863cffed119cb32b90f33b7ffd809cb2fb97d801d3503d62da3d619937436bfef76264d2                230 main/binary-all/Packages.gz
+ 2d14e691fb4f569fdf8f21d5ec00fd4da1e7954228cef9e0e2fe24aa9f0980d1fc650b3da63f6fec3daa1d484eefc65fef3a8343947b4e16c848a88d41bcf511                230 main/binary-all/Packages.gz
+
+
+SHA512:
+ 0a872ba27f8d53650e70e83320e808b68cbab5ca177b03bc27ed932385f81e4ae488546e7c961b4e2ae5e5ff82ef4299d91902de9e197abeac8590e6dac27783                263 main/binary-arm/Packages
+ 2d14e691fb4f569fdf8f21d5ec00fd4da1e7954228cef9e0e2fe24aa9f0980d1fc650b3da63f6fec3daa1d484eefc65fef3a8343947b4e16c848a88d41bcf511                230 main/binary-arm/Packages.gz
+ 0a872ba27f8d53650e70e83320e808b68cbab5ca177b03bc27ed932385f81e4ae488546e7c961b4e2ae5e5ff82ef4299d91902de9e197abeac8590e6dac27783                263 main/binary-all/Packages
+ 2d14e691fb4f569fdf8f21d5ec00fd4da1e7954228cef9e0e2fe24aa9f0980d1fc650b3da63f6fec3daa1d484eefc65fef3a8343947b4e16c848a88d41bcf511                230 main/binary-all/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iJEEARYKADkWIQSJW+oaJCsVme1rE3PDU5LA2tZDfAUCarUb/RsUgAAAAAAEAA5t
-YW51MiwyLjUrMS4xMiwzLDIACgkQw1OSwNrWQ3wldQD/T0FjZLz3jON70o72rsmQ
-v7KcIb5CIxny2lTmIzbwgpwA/jqC9IuCastFjuE1M9VX095q3pyhsBtS6QcE8sHn
-6/oD
-=LKgk
+iJEEARYKADkWIQSJW+oaJCsVme1rE3PDU5LA2tZDfAUCarUc8BsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMiwzLDIACgkQw1OSwNrWQ3yR0gD/WW5oX9UsO+hlTfWRXQjc
+81DvAR8D/OjTAj+ZoC+/OVsBANApTOOl3DfN0pzA9Jbln64pBvbilJ9U31/UZvcs
+yjIK
+=UHaS
 -----END PGP SIGNATURE-----
