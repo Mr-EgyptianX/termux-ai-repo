@@ -176,13 +176,15 @@ release_file.write_text(
     encoding="utf-8"
 )
 
-
 # --------------------------------------
 # Sign Release
 # --------------------------------------
 
 signature = DIST / "Release.gpg"
+inrelease = DIST / "InRelease"
 
+
+# Create ASCII-armored detached signature
 subprocess.run(
     [
         "gpg",
@@ -200,8 +202,25 @@ subprocess.run(
 )
 
 
+# Create signed InRelease
+subprocess.run(
+    [
+        "gpg",
+        "--batch",
+        "--yes",
+        "--local-user",
+        GPG_KEY,
+        "--clearsign",
+        "--output",
+        str(inrelease),
+        str(release_file),
+    ],
+    check=True
+)
+
+
 # --------------------------------------
-# Verify signature
+# Verify signatures
 # --------------------------------------
 
 subprocess.run(
@@ -215,6 +234,14 @@ subprocess.run(
 )
 
 
+subprocess.run(
+    [
+        "gpg",
+        "--verify",
+        str(inrelease),
+    ],
+    check=True
+)
 # --------------------------------------
 # Information
 # --------------------------------------
