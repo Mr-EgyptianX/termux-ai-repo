@@ -2,7 +2,7 @@ Origin: Mr-EgyptianX
 Label: Termux AI
 Suite: stable
 Codename: stable
-Date: Thu, 24 Sep 2026 08:47:25 UTC
+Date: Thu, 24 Sep 2026 08:53:39 UTC
 Architectures: arm all
 Components: main
 Description: Termux AI APT Repository
@@ -13,13 +13,13 @@ MD5Sum:
  4de29969413f0182ac5edfebf75e4828                263 main/binary-all/Packages
  bfa133aa9fc2e4425e3cfd34e63ba952                230 main/binary-all/Packages.gz
 
-SHA1Sum:
+SHA1:
  8e4490da27dbcf17b58df4e492775de65e9f61e8                263 main/binary-arm/Packages
  f0fa929254c5bd32d17fd5a33d1cedf864a827db                230 main/binary-arm/Packages.gz
  8e4490da27dbcf17b58df4e492775de65e9f61e8                263 main/binary-all/Packages
  f0fa929254c5bd32d17fd5a33d1cedf864a827db                230 main/binary-all/Packages.gz
 
-SHA256Sum:
+SHA256:
  7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421                263 main/binary-arm/Packages
  0452f943786d2af82016d3e2cf0c659a4840b819075650ffdd7a0a579c510780                230 main/binary-arm/Packages.gz
  7c59a304dff27cabff4717e9e24d3873e57307229b1d6b1d30d0a635f4a87421                263 main/binary-all/Packages
