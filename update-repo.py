@@ -185,41 +185,7 @@ for relative in release_files:
 
 release_lines.append("")
 
-
-# --------------------------------------
-# SHA512
-# --------------------------------------
-
-release_lines.extend([
-    "",
-    "SHA512:",
-])
-
-
-for relative in release_files:
-
-    path = DIST / relative
-
-    data = path.read_bytes()
-
-    sha512 = hashlib.sha512(data).hexdigest()
-
-    size = len(data)
-
-    release_lines.append(
-        f" {sha512} {size:18d} {relative}"
-    )
-
-
-release_lines.append("")
-
-
 release_file = DIST / "Release"
-
-release_file.write_text(
-    "\n".join(release_lines),
-    encoding="utf-8"
-)
 
 # --------------------------------------
 # Sign Release
