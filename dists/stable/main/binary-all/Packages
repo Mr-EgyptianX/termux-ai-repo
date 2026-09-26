@@ -1,12 +1,12 @@
 Package: termux-ai
-Version: 1.0.0
+Version: 3.0.1
 Architecture: all
 Maintainer: Mustafa
 Description: Termux AI - AI assistant for Termux
-Filename: dists/stable/main/binary-all/termux-ai_1.0.0_all.deb
-Size: 23292
-MD5Sum: 1b0c08773d4356d88f2962e4b8ee1a38
-SHA1: 418318f27b09b2cabd5fd447b1f17b3d7e96b949
-SHA256: 38c70b4a2a8ae2187d7bf4bea3b58b1748b66b098b67bef3b014d554efe651dc
-SHA512: c9d821da76f549e00ace7a800579716e172ebdd8c3be344e095a395797bacfe9e59b1785a2ab6ca0ad6bec835d5ea3d10ee1cd5a394ed6416c542c8a59937229
+Filename: dists/stable/main/binary-all/termux-ai_3.0.1_all.deb
+Size: 28828
+MD5Sum: 183335db76e1de8ae6163ac8ace5b9cd
+SHA1: 1f30160d2667d5b085a45086416700526842b85b
+SHA256: 3e607056ae17f02046be6f21b2a09c476f5e4169bd2bd1be95894fc8133f4ab6
+SHA512: 5380801368fba0e9c7af297dfe721b3de309c977c776e9e08bb563cb98a800b2aa893483c70c7e31982ec22905c541de38abc9a881b009c463be69df80fb0d49
 

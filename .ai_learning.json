@@ -1,0 +1,9 @@
+{
+  "commands": {},
+  "suggestions": {},
+  "corrections": {
+    "python": "python3 --ver",
+    "ls": "ps --verbo",
+    "ps": "top --verbo"
+  }
+}

@@ -1,0 +1,208 @@
+# ADVANCED DATABASE
+# VERSION=1
+# FORMAT=C|ID|NAME|TYPE|CATEGORY|SYNTAX|DESCRIPTION|EXAMPLE|PACKAGE
+# TYPE=builtin|external|termux|package
+# ================================================================
+
+# ---------------- SHELL BUILTINS ----------------
+
+C|0001|cd|builtin|shell|cd [DIRECTORY]|Change the current directory|cd ~/storage/shared|bash
+C|0002|pwd|builtin|shell|pwd|Show the current directory path|pwd|bash
+C|0003|echo|builtin|shell|echo [TEXT]|Print text or a value|echo Hello|bash
+C|0004|printf|builtin|shell|printf FORMAT [ARGUMENT]...|Print formatted text|printf "%s\n" "Hello"|bash
+C|0005|read|builtin|shell|read [OPTION] [NAME]...|Read input from the user|read name|bash
+C|0006|export|builtin|shell|export NAME[=VALUE]|Create or export an environment variable|export PATH="$PATH:$HOME/bin"|bash
+C|0007|unset|builtin|shell|unset NAME...|Remove a variable|unset name|bash
+C|0008|set|builtin|shell|set [OPTION] [ARGUMENT]...|Change shell settings or variables|set -u|bash
+C|0009|source|builtin|shell|source FILE|Execute a file in the current shell|source script.sh|bash
+C|0010|alias|builtin|shell|alias [NAME[=VALUE]]|Create a command alias|alias ll='ls -la'|bash
+C|0011|unalias|builtin|shell|unalias NAME|Remove an alias|unalias ll|bash
+C|0012|type|builtin|shell|type NAME...|Show the type and location of a command|type ls|bash
+C|0013|command|builtin|shell|command [OPTION] [NAME [ARG]...]|Run or inspect a command without aliases|command -v ls|bash
+C|0014|test|builtin|shell|test EXPRESSION|Evaluate a condition|test -f file.txt|bash
+C|0015|true|builtin|shell|true|Return a successful status|true|bash
+C|0016|false|builtin|shell|false|Return a failure status|false|bash
+C|0017|return|builtin|shell|return [N]|Return from a function or sourced script|return 0|bash
+C|0018|exit|builtin|shell|exit [N]|Exit the shell|exit 0|bash
+C|0019|exec|builtin|shell|exec COMMAND [ARGUMENT]...|Replace the current shell with another command|exec bash|bash
+C|0020|wait|builtin|shell|wait [PID]|Wait for a process|wait|bash
+C|0021|shift|builtin|shell|shift [N]|Shift positional parameters|shift 1|bash
+C|0022|trap|builtin|shell|trap ACTION SIGNAL...|Run an action when a signal is received|trap 'echo stop' INT|bash
+C|0023|help|builtin|shell|help [PATTERN]|Show help for Bash builtins|help cd|bash
+C|0024|history|builtin|shell|history [N]|Show command history|history 20|bash
+C|0025|local|builtin|shell|local NAME[=VALUE]|Create a local variable inside a function|local name="Mustafa"|bash
+C|0026|eval|builtin|shell|eval ARG...|Evaluate arguments as a shell command|eval "$cmd"|bash
+C|0027|jobs|builtin|shell|jobs [-l] [-p]|Show background jobs|jobs|bash
+C|0028|fg|builtin|shell|fg [JOB_SPEC]|Bring a job to the foreground|fg %1|bash
+C|0029|bg|builtin|shell|bg [JOB_SPEC]|Resume a stopped job in the background|bg %1|bash
+
+# ---------------- FILESYSTEM ----------------
+
+C|0101|ls|external|filesystem|ls [OPTION]... [FILE]...|List files and directories|ls -la|coreutils
+C|0102|cp|external|filesystem|cp [OPTION] SOURCE DEST|Copy files or directories|cp file.txt backup.txt|coreutils
+C|0103|mv|external|filesystem|mv [OPTION] SOURCE DEST|Move or rename files or directories|mv old.txt new.txt|coreutils
+C|0104|rm|external|filesystem|rm [OPTION]... FILE...|Remove files or directories|rm file.txt|coreutils
+C|0105|mkdir|external|filesystem|mkdir [OPTION]... DIRECTORY...|Create a directory|mkdir project|coreutils
+C|0106|rmdir|external|filesystem|rmdir [OPTION]... DIRECTORY...|Remove an empty directory|rmdir olddir|coreutils
+C|0107|touch|external|filesystem|touch [OPTION]... FILE...|Create a file or update its timestamp|touch main.sh|coreutils
+C|0108|cat|external|filesystem|cat [OPTION]... [FILE]...|Display file contents|cat main.sh|coreutils
+C|0109|head|external|text|head [OPTION]... [FILE]...|Display the beginning of a file|head -n 20 file.txt|coreutils
+C|0110|tail|external|text|tail [OPTION]... [FILE]...|Display the end of a file|tail -n 20 file.txt|coreutils
+C|0111|wc|external|text|wc [OPTION]... [FILE]...|Count lines, words, and characters|wc -l file.txt|coreutils
+C|0112|sort|external|text|sort [OPTION]... [FILE]...|Sort lines|sort names.txt|coreutils
+C|0113|uniq|external|text|uniq [OPTION]... [INPUT [OUTPUT]]|Remove adjacent duplicate lines|sort names.txt | uniq|coreutils
+C|0114|cut|external|text|cut OPTION... [FILE]...|Extract parts of each line|cut -d: -f1 file.txt|coreutils
+C|0115|tr|external|text|tr [OPTION] SET1 [SET2]|Translate or delete characters|tr a-z A-Z|coreutils
+C|0116|paste|external|text|paste [OPTION] [FILE]...|Merge lines from files|paste file1.txt file2.txt|coreutils
+C|0117|tee|external|text|tee [OPTION]... [FILE]...|Write input to output and files|echo hello | tee output.txt|coreutils
+C|0118|xargs|external|text|xargs [OPTION]... [COMMAND [INITIAL-ARGS]]|Build command arguments from input|printf "%s\n" a b | xargs echo|findutils
+C|0119|basename|external|filesystem|basename NAME [SUFFIX]|Extract the filename from a path|basename /tmp/test.txt|coreutils
+C|0120|dirname|external|filesystem|dirname NAME|Extract the directory from a path|dirname /tmp/test.txt|coreutils
+C|0121|realpath|external|filesystem|realpath [OPTION]... FILE...|Show the canonical path|realpath file.txt|coreutils
+C|0122|readlink|external|filesystem|readlink [OPTION]... FILE|Read a symbolic link|readlink link.txt|coreutils
+C|0123|stat|external|filesystem|stat [OPTION]... FILE...|Show file information|stat file.txt|coreutils
+C|0124|du|external|filesystem|du [OPTION]... [FILE]...|Show disk usage|du -sh .|coreutils
+C|0125|df|external|filesystem|df [OPTION]... [FILE]...|Show available disk space|df -h|coreutils
+C|0126|chmod|external|permissions|chmod [OPTION]... MODE FILE...|Change file permissions|chmod +x script.sh|coreutils
+C|0127|chown|external|permissions|chown [OPTION]... OWNER[:GROUP] FILE...|Change file ownership|chown user file.txt|coreutils
+C|0128|ln|external|filesystem|ln [OPTION]... TARGET LINK_NAME|Create a link|ln -s target link|coreutils
+C|0129|file|external|filesystem|file [OPTION]... FILE...|Determine the file type|file image.png|file
+
+# ---------------- TEXT PROCESSING ----------------
+
+C|0130|grep|external|text|grep [OPTION]... PATTERN [FILE]...|Search for text in files|grep -n "hello" file.txt|grep
+C|0131|sed|external|text|sed [OPTION]... SCRIPT [INPUT-FILE]...|Process and edit text|sed 's/old/new/g' file.txt|sed
+C|0132|awk|external|text|awk [OPTION]... PROGRAM [FILE]...|Process structured text data|awk '{print $1}' file.txt|gawk
+C|0133|find|external|filesystem|find PATH... EXPRESSION|Search for files and directories|find . -name "*.sh"|findutils
+C|0134|diff|external|text|diff [OPTION]... FILE1 FILE2|Compare files|diff old.txt new.txt|diffutils
+C|0135|cmp|external|text|cmp [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]|Compare files byte by byte|cmp a.bin b.bin|diffutils
+C|0136|comm|external|text|comm [OPTION]... FILE1 FILE2|Compare sorted files|comm file1 file2|coreutils
+C|0137|strings|external|text|strings [OPTION] [FILE]...|Extract readable strings from files|strings app.bin|binutils
+
+# ---------------- SYSTEM / PROCESS ----------------
+
+C|0201|id|external|system|id [OPTION]... [USER]|Show user and group IDs|id|coreutils
+C|0202|whoami|external|system|whoami|Show the current username|whoami|coreutils
+C|0203|uname|external|system|uname [OPTION]...|Show system information|uname -a|coreutils
+C|0204|hostname|external|system|hostname [OPTION] [NAME]|Show or set the hostname|hostname|coreutils
+C|0205|date|external|system|date [OPTION]... [+FORMAT]|Show date and time|date '+%Y-%m-%d'|coreutils
+C|0206|sleep|external|system|sleep NUMBER[SUFFIX]...|Wait for a specified time|sleep 2|coreutils
+C|0207|env|external|environment|env [OPTION]... [-] [NAME=VALUE]... [COMMAND [ARG]...]|Show or modify the execution environment|env|coreutils
+C|0208|printenv|external|environment|printenv [OPTION]... [VARIABLE]...|Show environment variables|printenv HOME|coreutils
+C|0209|ps|external|process|ps [OPTION]...|Show running processes|ps|procps
+C|0210|pgrep|external|process|pgrep [OPTION]... PATTERN|Find processes by name|pgrep bash|procps
+C|0211|pkill|external|process|pkill [OPTION]... PATTERN|Send a signal to matching processes|pkill process_name|procps
+C|0212|kill|builtin|process|kill [-SIGNAL] PID...|Send a signal to a process|kill 1234|bash
+C|0213|killall|external|process|killall [OPTION]... NAME...|Send a signal to processes by name|killall appname|psmisc
+C|0214|top|external|process|top [OPTION]...|Monitor processes and resource usage|top|procps
+C|0215|free|external|system|free [OPTION]...|Show memory usage|free -h|procps
+C|0216|uptime|external|system|uptime [OPTION]...|Show system uptime|uptime|procps
+C|0217|nice|external|process|nice [OPTION] [COMMAND [ARG]...]|Run a command with a different priority|nice -n 5 command|coreutils
+C|0218|renice|external|process|renice [OPTION] -n INCREMENT [PID... | PGID... | USER... ]|Change process priority|renice -n 5 -p 1234|util-linux
+
+# ---------------- ARCHIVES / COMPRESSION ----------------
+
+C|0301|tar|external|archive|tar [OPTION]... [FILE]...|Create and extract tar archives|tar -cf archive.tar folder|tar
+C|0302|gzip|external|archive|gzip [OPTION]... [FILE]...|Compress files with gzip|gzip file.txt|gzip
+C|0303|gunzip|external|archive|gunzip [OPTION]... [FILE]...|Decompress gzip files|gunzip file.txt.gz|gzip
+C|0304|bzip2|external|archive|bzip2 [OPTION]... [FILE]...|Compress using bzip2|bzip2 file.txt|bzip2
+C|0305|bunzip2|external|archive|bunzip2 [OPTION]... [FILE]...|Decompress bzip2 files|bunzip2 file.txt.bz2|bzip2
+C|0306|xz|external|archive|xz [OPTION]... [FILE]...|Compress using xz|xz file.txt|xz-utils
+C|0307|unxz|external|archive|unxz [OPTION]... [FILE]...|Decompress xz files|unxz file.txt.xz|xz-utils
+C|0308|zip|external|archive|zip [OPTION]... ZIPFILE FILE...|Create a zip archive|zip files.zip file.txt|zip
+C|0309|unzip|external|archive|unzip [OPTION] ZIPFILE [FILE...]|Extract a zip archive|unzip files.zip|unzip
+C|0310|zcat|external|archive|zcat [OPTION]... [FILE]...|Display gzip content without manual extraction|zcat file.txt.gz|gzip
+
+# ---------------- NETWORK ----------------
+
+C|0401|curl|external|network|curl [OPTION]... [URL]|Transfer data over the network|curl https://example.com|curl
+C|0402|ping|external|network|ping [OPTION]... HOST|Test network reachability|ping example.com|inetutils
+C|0403|ping6|external|network|ping6 [OPTION]... HOST|Test IPv6 connectivity|ping6 example.com|inetutils
+C|0404|nc|external|network|nc [OPTION]... HOST PORT|General network connection utility|nc host 80|netcat-openbsd
+C|0405|netstat|external|network|netstat [OPTION]...|Show network connections|netstat -an|net-tools
+C|0406|ifconfig|external|network|ifconfig [INTERFACE] [OPTIONS]|Show or configure network interfaces|ifconfig|net-tools
+
+# ---------------- PACKAGE MANAGEMENT ----------------
+
+C|0501|pkg|termux|package|pkg COMMAND [PACKAGE...]|Simplified Termux package manager interface|pkg install python|termux-tools
+C|0502|apt|external|package|apt [OPTION] COMMAND|Manage packages and repositories|apt update|apt
+C|0503|apt-get|external|package|apt-get [OPTION] COMMAND|Low-level APT package management|apt-get update|apt
+C|0504|apt-cache|external|package|apt-cache COMMAND [PACKAGE...]|Search and inspect package information|apt-cache search python|apt
+C|0505|apt-mark|external|package|apt-mark COMMAND [PACKAGE...]|Manage manually and automatically installed package states|apt-mark showmanual|apt
+C|0506|dpkg|external|package|dpkg [OPTION...] ACTION|Manage Debian packages|dpkg -l|dpkg
+C|0507|dpkg-deb|external|package|dpkg-deb [OPTION...] COMMAND|Inspect and create deb packages|dpkg-deb -I package.deb|dpkg
+
+# ---------------- TERMUX TOOLS ----------------
+
+C|0601|termux-setup-storage|termux|termux|termux-setup-storage|Set up storage access and storage links|termux-setup-storage|termux-tools
+C|0602|termux-open|termux|termux|termux-open [OPTIONS] PATH_OR_URL|Open a file or URL with an external application|termux-open file.txt|termux-tools
+C|0603|termux-open-url|termux|termux|termux-open-url URL [APP_PACKAGE_OR_COMPONENT]|Open a URL|termux-open-url https://example.com|termux-tools
+C|0604|termux-info|termux|termux|termux-info|Show Termux environment information|termux-info|termux-tools
+C|0605|termux-change-repo|termux|termux|termux-change-repo|Change Termux repositories|termux-change-repo|termux-tools
+C|0606|termux-fix-shebang|termux|termux|termux-fix-shebang FILE...|Fix shebang lines for Termux|termux-fix-shebang script.sh|termux-tools
+C|0607|termux-reload-settings|termux|termux|termux-reload-settings|Reload Termux settings|termux-reload-settings|termux-tools
+C|0608|termux-reset|termux|termux|termux-reset|Reset the Termux terminal state|termux-reset|termux-tools
+C|0609|termux-backup|termux|termux|termux-backup OUTPUT_FILE|Create a backup of the Termux environment|termux-backup backup.tar.gz|termux-tools
+C|0610|termux-restore|termux|termux|termux-restore INPUT_FILE|Restore a Termux backup|termux-restore backup.tar.gz|termux-tools
+C|0611|termux-setup-package-manager|termux|termux|termux-setup-package-manager|Set up the package manager|termux-setup-package-manager|termux-tools
+C|0612|termux-wake-lock|termux|termux|termux-wake-lock|Prevent the device from sleeping|termux-wake-lock|termux-tools
+C|0613|termux-wake-unlock|termux|termux|termux-wake-unlock|Allow the device to sleep again|termux-wake-unlock|termux-tools
+C|0614|chsh|termux|termux|chsh [OPTION] [LOGIN_SHELL]|Change the default shell|chsh|termux-tools
+C|0615|login|termux|termux|login [OPTION] [USERNAME]|Start a login session|login|termux-tools
+C|0616|dalvikvm|termux|android|dalvikvm [OPTIONS] CLASSNAME|Run the Dalvik virtual machine|dalvikvm|termux-tools
+C|0617|getprop|termux|android|getprop [PROPERTY]|Read Android system properties|getprop|termux-tools
+C|0618|logcat|termux|android|logcat [OPTIONS]|Display Android system logs|logcat|termux-tools
+C|0619|pm|termux|android|pm [COMMAND] [PACKAGE]|Manage Android packages|pm list packages|termux-tools
+C|0620|settings|termux|android|settings [COMMAND] [NAMESPACE] [KEY] [VALUE]|Read or modify Android settings|settings list system|termux-tools
+C|0621|mount|termux|android|mount [OPTIONS]|Show or perform mount operations when permitted|mount|termux-tools
+C|0622|umount|termux|android|umount [OPTIONS] TARGET|Unmount a filesystem|umount TARGET|termux-tools
+C|0623|xdg-open|termux|termux|xdg-open PATH_OR_URL|Open a file or URL|xdg-open file.txt|termux-tools
+
+# ---------------- OPTIONAL COMMON TOOLS ----------------
+
+C|0701|wget|external|network|wget [OPTION]... [URL]...|Download files over HTTP or HTTPS|wget https://example.com/file.zip|wget
+C|0702|git|external|development|git [--version] [COMMAND] [OPTIONS]|Distributed version control system|git status|git
+C|0703|ssh|external|network|ssh [OPTION]... [HOST] [COMMAND]|Connect to a remote SSH server|ssh user@host|openssh
+C|0704|scp|external|network|scp [OPTION] SOURCE... TARGET|Copy files over SSH|scp file user@host:path|openssh
+C|0705|sftp|external|network|sftp [OPTION]... [USER@]HOST|Transfer files using SFTP|sftp user@host|openssh
+C|0706|vim|external|editor|vim [OPTION]... [FILE]...|Advanced text editor|vim main.sh|vim
+C|0707|nano|external|editor|nano [OPTION]... [FILE]...|Simple text editor|nano main.sh|nano
+C|0708|less|external|text|less [OPTION]... [FILE]...|Read files page by page|less main.sh|less
+C|0709|more|external|text|more [OPTION]... FILE...|Display text page by page|more file.txt|util-linux
+C|0710|tree|external|filesystem|tree [OPTION] [DIRECTORY]|Display directories as a tree|tree|tree
+C|0711|jq|external|text|jq [OPTIONS] FILTER [FILE...]|Process JSON data|jq '.name' data.json|jq
+C|0712|dialog|external|interface|dialog [OPTION]...|Create text-based interfaces|dialog --msgbox "Hello" 10 30|dialog
+C|0713|watch|external|process|watch [OPTION] COMMAND|Run a command repeatedly to monitor its output|watch ls|procps
+C|0714|timeout|external|process|timeout [OPTION] DURATION COMMAND [ARG]...|Run a command with a time limit|timeout 5s command|coreutils
+
+# ---------------- COMMON ERROR KNOWLEDGE ----------------
+
+E|9001|command not found|The command does not exist or was typed incorrectly|Check the command name and search for the closest registered command|command
+E|9002|No such file or directory|The specified file or directory does not exist|Check the path, filename, and whether the target exists|filesystem
+E|9003|Permission denied|The operation does not have sufficient permission|Check file permissions or the required operation permissions|permissions
+E|9004|Is a directory|A directory was used where a file was expected|Select the correct file or use the appropriate directory command|filesystem
+E|9005|Not a directory|Part of the specified path is not a directory|Check each part of the path|filesystem
+E|9006|File exists|The requested target already exists|Choose another name or use the appropriate option|filesystem
+E|9007|missing operand|A required argument is missing|Check the command SYNTAX and provide the missing argument|syntax
+E|9008|invalid option|An invalid command option was provided|Check the available options or use --help|syntax
+E|9009|too many arguments|Too many arguments were provided|Compare the command with the registered SYNTAX|syntax
+E|9010|cannot open|The file or resource could not be opened|Check the name, path, and permissions|filesystem
+E|9011|cannot create|The file or directory could not be created|Check the path, available storage, and permissions|filesystem
+E|9012|not found|The requested item could not be found|Check the name and path|filesystem
+E|9013|E: Unable to locate package|The package could not be found in the current package indexes|Check the package name and update package indexes|package
+E|9014|dpkg was interrupted|A dpkg operation did not finish correctly|Check the package manager state before continuing|package
+E|9015|Could not get lock|Another process is using the package manager|Make sure another package process is not running|package
+E|9016|Syntax error|The shell command or script has invalid syntax|Check the syntax, brackets, and quotes|syntax
+E|9017|unterminated quoted string|A quoted string was not closed|Check all quotation marks in the command|syntax
+E|9018|command failed|The command exited with a failure status|Read the error message and inspect the command and arguments|general
+
+# ---------------- CORRECTION RULES ----------------
+
+R|001|COMMAND_NOT_FOUND|First search for an exact NAME match, then find the closest command name|NAME
+R|002|BAD_SYNTAX|Compare the provided arguments with the command SYNTAX|SYNTAX
+R|003|MISSING_ARGUMENT|Check the required fields in SYNTAX|SYNTAX
+R|004|INVALID_OPTION|Compare the options with the available OPTIONS or updated tool data|OPTIONS
+R|005|PATH_ERROR|Check the path and its parent directory before suggesting a correction|PATH
+R|006|PACKAGE_ERROR|Search package data for the package name|PACKAGE
+C|8001|python3|external|external|usage: python3 [option] ... [-c cmd / -m mod / file / -] [arg] ...|Options (and corresponding environment variables):|python3 --help|discovered
+C|8002|python|external|external|usage: python [option] ... [-c cmd / -m mod / file / -] [arg] ...|Options (and corresponding environment variables):|python --help|discovered
